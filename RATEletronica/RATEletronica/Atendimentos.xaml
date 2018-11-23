@@ -1,11 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RATEletronica.Atendimentos">
-    <ContentPage.Content>
+<!--<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="RATEletronica.Atendimentos">
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+        <ContentPage.Content>
+            <StackLayout x:Name="Tela">
+                <Label Text="Atendimentos " HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
+                <ListView x:Name="lsAtendimentos">
+
+                </ListView>
+                <Label Text="Red" FontSize="Medium" HorizontalOptions="Center" />
+                <BoxView Color="Red" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+</CarouselPage>-->
+
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RATEletronica.Atendimentos">
+    <!--<ContentPage>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"/>
-            
+            <Label Text="Red" />
+            <BoxView Color="Red" VerticalOptions="FillAndExpand" />
         </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    </ContentPage>
+    <ContentPage>
+        <StackLayout>
+            <Label Text="Green" />
+            <BoxView Color="Green" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <StackLayout>
+            <Label Text="Blue" />
+            <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>-->
+</CarouselPage>
+
