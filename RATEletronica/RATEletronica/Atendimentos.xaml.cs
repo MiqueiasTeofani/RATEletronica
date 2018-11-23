@@ -13,21 +13,39 @@ namespace RATEletronica
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Atendimentos : ContentPage
 	{
+
 		public Atendimentos ()
 		{
-            ObservableCollection<string> employees = new ObservableCollection<string>();
-
-            employees.Add("teste");
-            employees.Add("teste");
-            employees.Add("teste");
-            employees.Add("teste");
-            employees.Add("teste");
-            employees.Add("teste");
-
-            EmployeeView.ItemsSource = employees.ToList();
-            //EmployeeView.ItemsSource = employees;
 
             InitializeComponent ();
+
+            var list = new List<string>();
+
+            foreach (var item in ListaAtendimentos())
+            {
+                list.Add(item.Serie);
+            }
+
+            var listView = new ListView
+            {
+                ItemsSource = list
+            };
+
+            Content = listView;
+            
+
+
+            
 		}
+        public List<Controles.Atendimento> ListaAtendimentos()
+        {
+            var ListaAtendimentos = new List<Controles.Atendimento>(){
+               new Controles.Atendimento(1,1,1,"Serie1",Controles.Atendimento.TipoAtendimentos.Instalação,DateTime.Now,DateTime.Now,1,new TimeSpan(1,1,1),new TimeSpan(1,1,1),new TimeSpan(1,1,1),Controles.Atendimento.Itinerarios.BC,1,Controles.Atendimento.Itinerarios.CB,1,Controles.Atendimento.Condicaofinal.Parado,Controles.Atendimento.CondicaoMaterial.Necessita_peças,"Obs1"),
+               new Controles.Atendimento(1,1,1,"Serie2",Controles.Atendimento.TipoAtendimentos.Instalação,DateTime.Now,DateTime.Now,1,new TimeSpan(1,1,1),new TimeSpan(1,1,1),new TimeSpan(1,1,1),Controles.Atendimento.Itinerarios.BC,1,Controles.Atendimento.Itinerarios.CB,1,Controles.Atendimento.Condicaofinal.Parado,Controles.Atendimento.CondicaoMaterial.Necessita_peças,"Obs1"),
+               new Controles.Atendimento(1,1,1,"Serie3",Controles.Atendimento.TipoAtendimentos.Instalação,DateTime.Now,DateTime.Now,1,new TimeSpan(1,1,1),new TimeSpan(1,1,1),new TimeSpan(1,1,1),Controles.Atendimento.Itinerarios.BC,1,Controles.Atendimento.Itinerarios.CB,1,Controles.Atendimento.Condicaofinal.Parado,Controles.Atendimento.CondicaoMaterial.Necessita_peças,"Obs1"),
+            };
+            return ListaAtendimentos;
+        }
 	}
+    
 }
