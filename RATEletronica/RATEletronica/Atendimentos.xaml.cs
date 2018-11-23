@@ -53,9 +53,6 @@ namespace RATEletronica
 
             foreach (var item in ListaAtendimentos())
             {
-
-              
-
                 if (item.IdAtendimento == ListaAtendimentos().Last().IdAtendimento)
                 {
                     pag.Add(new ContentPage
