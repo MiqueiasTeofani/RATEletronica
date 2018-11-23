@@ -21,19 +21,19 @@ namespace RATEletronica
             
 
             InitializeComponent();
-
+            Title = "Atendimentos Pendentes";
             foreach (var item in CarroselAtendimentos())
             {
                 Children.Add(item);
             }
 
         }
-        public List<string> ListaAtendimentos()
+        public List<Controles.Atendimento> ListaAtendimentos()
         {
             var ListaAtendimentos = new List<Controles.Atendimento>(){
                new Controles.Atendimento(1,1,1,"Serie1",Controles.Atendimento.TipoAtendimentos.Instalação,DateTime.Now,DateTime.Now,1,new TimeSpan(1,1,1),new TimeSpan(1,1,1),new TimeSpan(1,1,1),Controles.Atendimento.Itinerarios.BC,1,Controles.Atendimento.Itinerarios.CB,1,Controles.Atendimento.Condicaofinal.Parado,Controles.Atendimento.CondicaoMaterial.Necessita_peças,"Obs1"),
-               new Controles.Atendimento(1,1,1,"Serie2",Controles.Atendimento.TipoAtendimentos.Instalação,DateTime.Now,DateTime.Now,1,new TimeSpan(1,1,1),new TimeSpan(1,1,1),new TimeSpan(1,1,1),Controles.Atendimento.Itinerarios.BC,1,Controles.Atendimento.Itinerarios.CB,1,Controles.Atendimento.Condicaofinal.Parado,Controles.Atendimento.CondicaoMaterial.Necessita_peças,"Obs1"),
-               new Controles.Atendimento(1,1,1,"Serie3",Controles.Atendimento.TipoAtendimentos.Instalação,DateTime.Now,DateTime.Now,1,new TimeSpan(1,1,1),new TimeSpan(1,1,1),new TimeSpan(1,1,1),Controles.Atendimento.Itinerarios.BC,1,Controles.Atendimento.Itinerarios.CB,1,Controles.Atendimento.Condicaofinal.Parado,Controles.Atendimento.CondicaoMaterial.Necessita_peças,"Obs1"),
+               new Controles.Atendimento(2,1,1,"Serie2",Controles.Atendimento.TipoAtendimentos.Instalação,DateTime.Now,DateTime.Now,1,new TimeSpan(1,1,1),new TimeSpan(1,1,1),new TimeSpan(1,1,1),Controles.Atendimento.Itinerarios.BC,1,Controles.Atendimento.Itinerarios.CB,1,Controles.Atendimento.Condicaofinal.Parado,Controles.Atendimento.CondicaoMaterial.Necessita_peças,"Obs1"),
+               new Controles.Atendimento(3,1,1,"Serie3",Controles.Atendimento.TipoAtendimentos.Instalação,DateTime.Now,DateTime.Now,1,new TimeSpan(1,1,1),new TimeSpan(1,1,1),new TimeSpan(1,1,1),Controles.Atendimento.Itinerarios.BC,1,Controles.Atendimento.Itinerarios.CB,1,Controles.Atendimento.Condicaofinal.Parado,Controles.Atendimento.CondicaoMaterial.Necessita_peças,"Obs1"),
             };
 
             var listStr = new List<string>();
@@ -44,7 +44,7 @@ namespace RATEletronica
             }
 
 
-            return listStr;
+            return ListaAtendimentos;
         }
         public List<ContentPage> CarroselAtendimentos()
         {
@@ -53,14 +53,58 @@ namespace RATEletronica
 
             foreach (var item in ListaAtendimentos())
             {
-                pag.Add(new ContentPage{
-                            Content = new StackLayout{
-                                Children = { new Label { Text = item.ToString(), HorizontalTextAlignment = TextAlignment.Center,VerticalTextAlignment = TextAlignment.Center }       
+
+              
+
+                if (item.IdAtendimento == ListaAtendimentos().Last().IdAtendimento)
+                {
+                    pag.Add(new ContentPage
+                    {
+                        Content = new StackLayout
+                        {
+                            Children = {
+                                { new Label { Text =  "Data Prevista: "+item.DataPrevista.ToString() , FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)) } },
+                                { new Label { Text = "Serie: "+item.Serie.ToString(), FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))  } },
+                                { new Label { Text = "Requisição: "+item.IdRequisicao.ToString(), FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)) } },
+                                { new Label { Text = " < ", FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)),TextColor=Color.Blue, HorizontalTextAlignment= TextAlignment.Center } },
+                                { new Button { Text = "Editar/Encerrar", BackgroundColor = Color.Blue , BorderColor = Color.Black , TextColor = Color.White } }
+
                             }
                         }
-                });
-            }
+                    });
+                }else
+                if (item.IdAtendimento == ListaAtendimentos().First().IdAtendimento)
+                {
+                    pag.Add(new ContentPage
+                    {
+                        Content = new StackLayout
+                        {
+                            Children = {
+                                { new Label { Text =  "Data Prevista: "+item.DataPrevista.ToString() , FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)) } },
+                                { new Label { Text = "Serie: "+item.Serie.ToString(), FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))  } },
+                                { new Label { Text = "Requisição: "+item.IdRequisicao.ToString(), FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)) } },
+                                { new Label { Text = " > ", FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)),TextColor=Color.Blue, HorizontalTextAlignment= TextAlignment.Center } },
+                                { new Button { Text = "Editar/Encerrar", BackgroundColor = Color.Blue , BorderColor = Color.Black , TextColor = Color.White } }
 
+                            }
+                        }
+                    });
+                }else               
+                    pag.Add(new ContentPage
+                    {
+                        Content = new StackLayout
+                        {
+                            Children = {
+                                { new Label { Text =  "Data Prevista: "+item.DataPrevista.ToString() , FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)) } },
+                                { new Label { Text = "Serie: "+item.Serie.ToString(), FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))  } },
+                                { new Label { Text = "Requisição: "+item.IdRequisicao.ToString(), FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)) } },
+                                { new Label { Text = "< -- > ", FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)),TextColor=Color.Blue, HorizontalTextAlignment= TextAlignment.Center } },
+                                { new Button { Text = "Editar/Encerrar", BackgroundColor = Color.Blue , BorderColor = Color.Black , TextColor = Color.White } }
+
+                            }
+                        }
+                    });         
+            }
             return pag;
 
 
