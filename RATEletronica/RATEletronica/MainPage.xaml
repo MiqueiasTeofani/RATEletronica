@@ -6,9 +6,12 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
+    	<Label Text="Login" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Entry x:Name="lbUsuario" Placeholder="Username" />
+        <Entry x:Name="lbSenha" Placeholder="Password" IsPassword="True"/>
+        <Button x:Name="btnLogar" Clicked="btnLogar_ClickedAsync" />
     </StackLayout>
 
 </ContentPage>
