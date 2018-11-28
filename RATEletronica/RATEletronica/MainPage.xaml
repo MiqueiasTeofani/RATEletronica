@@ -6,12 +6,26 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-    	<Label Text="Login" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Entry x:Name="lbUsuario" Placeholder="Username" />
-        <Entry x:Name="lbSenha" Placeholder="Password" IsPassword="True"/>
-        <Button x:Name="btnLogar" Clicked="btnLogar_ClickedAsync" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="csf.png" Grid.Row="1" Grid.Column="0" Aspect="Fill"/>
+            <!--<Label Text="CSF Técnicos" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  Grid.Row="1" Grid.Column="0"/>-->
+            <Entry x:Name="lbUsuario" Placeholder="Usuario" Grid.Row="2" Grid.Column="0"/>
+            <Entry x:Name="lbSenha"  Placeholder="Senha" IsPassword="True" Grid.Row="3" Grid.Column="0"/>
+            <Button x:Name="btnLogar" Clicked="btnLogar_ClickedAsync" Text="Entrar"  Grid.Row="4" Grid.Column="0"/>
+        </Grid>
     </StackLayout>
 
 </ContentPage>

@@ -17,7 +17,9 @@
     </ContentPage>
 </CarouselPage>-->
 
-<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RATEletronica.Atendimentos">
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RATEletronica.Atendimentos" >
+    
+    
     <!--<ContentPage>
         <StackLayout>
             <Label Text="Red" />

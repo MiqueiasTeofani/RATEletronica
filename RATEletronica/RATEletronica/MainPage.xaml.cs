@@ -41,6 +41,7 @@ namespace RATEletronica
 
                 if (autenticidade)
                 {
+                    Atendimentos.NTecnico = tecnico;
                     await Navigation.PushModalAsync(new Atendimentos());
                 }
 
