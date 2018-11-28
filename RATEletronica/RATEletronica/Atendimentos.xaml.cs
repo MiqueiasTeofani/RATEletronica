@@ -114,7 +114,7 @@ namespace RATEletronica
                 Serie.VerticalOptions = LayoutOptions.Center;
        
 
-                idRequisicao.Text = "Requisição:  " + item.IdRequisicao.ToString()+ "&#10; &#10;";
+                idRequisicao.Text = "Requisição:  " + item.IdRequisicao.ToString();
                 idRequisicao.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
                 idRequisicao.HorizontalOptions = LayoutOptions.Center;
                 idRequisicao.VerticalOptions = LayoutOptions.Center;
