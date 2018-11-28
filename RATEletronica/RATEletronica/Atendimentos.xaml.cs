@@ -93,71 +93,60 @@ namespace RATEletronica
                 Label idRequisicao = new Label();
                 Button btnEditar = new Button();
                 Label Seta = new Label();
-                Grid grid = new Grid();
-
-                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(400) });
-
-                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
-                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
-                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
-                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
-                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
-                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(50) });
-
-                grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-
-                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(100) });
-                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(100) });
-                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(100) });
 
                 NomeTecnico.Text = "Tecnico:  " + NTecnico;
                 NomeTecnico.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
                 NomeTecnico.HorizontalOptions = LayoutOptions.Center;
                 NomeTecnico.VerticalOptions = LayoutOptions.Center;
-                grid.Children.Add(NomeTecnico,1,1);
+               
 
 
                 DataPrevista.Text = "Data Prevista:  " + item.DataPrevista.Value.ToString("dd/MM/yyyy");
                 DataPrevista.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
                 DataPrevista.HorizontalOptions = LayoutOptions.Center;
                 DataPrevista.VerticalOptions = LayoutOptions.Center;
-                grid.Children.Add(DataPrevista, 1, 2);
+              
 
 
                 Serie.Text = "Serie:  " + item.Serie.ToString();
                 Serie.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
                 Serie.HorizontalOptions = LayoutOptions.Center;
                 Serie.VerticalOptions = LayoutOptions.Center;
-                grid.Children.Add(Serie, 1, 3);
+       
 
-                idRequisicao.Text = "Requisição:  " + item.IdRequisicao.ToString();
+                idRequisicao.Text = "Requisição:  " + item.IdRequisicao.ToString()+ "&#10; &#10;";
                 idRequisicao.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
                 idRequisicao.HorizontalOptions = LayoutOptions.Center;
                 idRequisicao.VerticalOptions = LayoutOptions.Center;
-                grid.Children.Add(idRequisicao, 1, 4);
+              
 
                 btnEditar.Text = "Editar/Encerrar";
                 btnEditar.BackgroundColor = Color.Blue;
                 btnEditar.BorderColor = Color.Black;
                 btnEditar.TextColor = Color.White;
+                btnEditar.VerticalOptions = LayoutOptions.Fill;
                 btnEditar.Clicked += async (sender, args) => await RedirecionarAsync(item);
-                grid.Children.Add(btnEditar, 1, 5);
+    
 
                 if (item.IdAtendimento == lista.Last().IdAtendimento)
                 {
-                    Seta.Text = " <-- ";
+            
+                    Seta.Text = " <--     ";
                     Seta.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
                     Seta.TextColor = Color.Blue;
-                    Seta.HorizontalTextAlignment = TextAlignment.Center;
-                    grid.Children.Add(Seta, 1, 6);
+                    Seta.HorizontalTextAlignment = TextAlignment.Start;
+                    Seta.VerticalOptions = LayoutOptions.Fill;
+
+
                 }
                 else if (item.IdAtendimento == lista.First().IdAtendimento)
                 {
-                    Seta.Text = " --> ";
+                    Seta.Text = "      --> ";
                     Seta.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
                     Seta.TextColor = Color.Blue;
-                    Seta.HorizontalTextAlignment = TextAlignment.Center;
-                    grid.Children.Add(Seta, 1, 6);
+                    Seta.HorizontalTextAlignment = TextAlignment.End;
+                    Seta.VerticalOptions = LayoutOptions.Fill;
+
                 }
                 else
                 {
@@ -165,10 +154,11 @@ namespace RATEletronica
                     Seta.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
                     Seta.TextColor = Color.Blue;
                     Seta.HorizontalTextAlignment = TextAlignment.Center;
-                    grid.Children.Add(Seta, 1, 6);
+                    Seta.VerticalOptions = LayoutOptions.Fill;
+
                 }
 
-                stackLay = new StackLayout() { Children = {grid,NomeTecnico,DataPrevista,Serie,idRequisicao,btnEditar,Seta }};
+                stackLay = new StackLayout() {Margin= new Thickness(10, 50, 10, 0), Children = {NomeTecnico,DataPrevista,Serie,idRequisicao,btnEditar,Seta }};
 
                 lPage.Add(new ContentPage() { Content = stackLay , Title="Atendimentos Pendendes"}); 
                 
