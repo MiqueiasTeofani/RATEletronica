@@ -15,10 +15,10 @@ using Xamarin.Forms.Xaml;
 namespace RATEletronica
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Atendimentos : CarouselPage/*ContentPage*/
+	public partial class  Atendimentos : CarouselPage/*ContentPage*/
 	{
         
-        public static string NTecnico ;
+        public static string NTecnico  ;
         
         public Atendimentos ()
 		{

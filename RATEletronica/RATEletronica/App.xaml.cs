@@ -12,6 +12,7 @@ namespace RATEletronica
 			InitializeComponent();
             //MainPage = new NavigationPage(new Atendimentos());
             MainPage = new MainPage();
+            //MainPage =new NavigationPage(new Master.Home());
         }
 
 		protected override void OnStart ()

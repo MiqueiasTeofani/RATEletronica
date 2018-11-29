@@ -34,7 +34,7 @@ namespace RATEletronica
         {
             try
             {
-                HttpClient client =new HttpClient();
+                HttpClient client = new HttpClient();
                 string url = "http://tecnicos.gearhostpreview.com/api/Atendimentos?tecnico="+tecnico;
                 var response = await client.GetStringAsync(url);
                 var autenticidade = JsonConvert.DeserializeObject<bool>(response);
@@ -42,7 +42,7 @@ namespace RATEletronica
                 if (autenticidade)
                 {
                     Atendimentos.NTecnico = tecnico;
-                    await Navigation.PushModalAsync(new Atendimentos());
+                    await Navigation.PushModalAsync(new Master.Home());
                 }
 
                 return true;

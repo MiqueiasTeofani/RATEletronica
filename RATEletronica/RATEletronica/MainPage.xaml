@@ -4,11 +4,11 @@
              xmlns:local="clr-namespace:RATEletronica"
              x:Class="RATEletronica.MainPage">
 
-    <StackLayout>
+    <StackLayout Padding="20,20,20,0" BackgroundColor="White">
         <!-- Place new controls here -->
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="200" />
+                <RowDefinition Height="150" />
                 
                 <RowDefinition Height="*" />
                 <RowDefinition Height="50" />
@@ -20,7 +20,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Image Source="csf.png" Grid.Row="1" Grid.Column="0" Aspect="Fill"/>
+            <Image Source="LogoCSF.png"  Grid.Row="1" Grid.Column="0" Aspect="Fill"/>
             <!--<Label Text="CSF Técnicos" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  Grid.Row="1" Grid.Column="0"/>-->
             <Entry x:Name="lbUsuario" Placeholder="Usuario" Grid.Row="2" Grid.Column="0"/>
             <Entry x:Name="lbSenha"  Placeholder="Senha" IsPassword="True" Grid.Row="3" Grid.Column="0"/>
