@@ -1,11 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
              x:Class="RATEletronica.Edicao" Title="Atualizar">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10,50,10,0" Orientation="Horizontal" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    
+                    
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="IdAtendimento" Grid.Row="1" Grid.Column="0" FontSize="Large"/>
+                <Entry  Text="Teste" x:Name="lbIdAtendimento" Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="IdRequisicão" Grid.Row="2" Grid.Column="0" FontSize="Large"/>
+                <Entry  Text="Teste" x:Name="lbIdRequisicao" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Text="Serie" Grid.Row="3" Grid.Column="0" FontSize="Large"/>
+                <Entry  Text="Teste" x:Name="lbSerie" Grid.Row="3" Grid.Column="1"/>
+
+                <Label Text="Tipo Atendimento" Grid.Row="4" Grid.Column="0" FontSize="Large"/>
+                <Picker Title="Tipo Atendimento" x:Name="lsAtendimentos" Grid.Row="4" Grid.Column="1"></Picker>
+
+                <Label Text="Data Prevista" Grid.Row="5" Grid.Column="0" FontSize="Large"/>
+                <DatePicker x:Name="lbDataPrevista" Grid.Row="5" Grid.Column="1"/>
+
+                <Label Text="Data Atendimento" Grid.Row="6" Grid.Column="0" FontSize="Large"/>
+                <DatePicker x:Name="lbDataAtendimento" Grid.Row="6" Grid.Column="1"/>
+
+                <Label Text="Tempo de Viagem" Grid.Row="7" Grid.Column="0" FontSize="Large"/>
+                <Entry Placeholder="h" x:Name="lbTempoViagemH" Grid.Row="7" Grid.Column="1" Keyboard="Numeric" WidthRequest="85" HorizontalOptions="Start"/>
+                <Entry Placeholder="min" x:Name="lbTempoViagemM" Grid.Row="7" Grid.Column="1" Keyboard="Numeric" WidthRequest="85" HorizontalOptions="End"/>
+
+                <Label Text="Contador" Grid.Row="8" Grid.Column="0" FontSize="Large"/>
+                <Entry x:Name="lbContador" Keyboard="Numeric" Grid.Row="8" Grid.Column="1"/>
+
+                <Label Text="Hora Inicial" Grid.Row="9" Grid.Column="0" FontSize="Large"/>
+                <TimePicker x:Name="lbHoraInicio" Grid.Row="9" Grid.Column="1"/>
+
+                <Button x:Name="btnEncerrar" Text="Encerrar" Clicked="btnEncerrar_Clicked"/>
+            </Grid>
             
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
